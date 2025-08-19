@@ -1,0 +1,19 @@
+# Ignorar virtualenv
+venv/
+.env/
+.venv/
+
+# Arquivos comuns de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Configurações locais
+*.sqlite3
+.DS_Store
+.idea/
+.vscode/

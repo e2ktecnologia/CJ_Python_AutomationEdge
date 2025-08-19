@@ -1,0 +1,16 @@
+[
+    {
+        "CRT COMPRA": "29740",
+        "CRT VENDA": "29752",
+        "CLIFOR VENDA": "70432",
+        "NM CLIFOR VENDA": "TESC - TERMINAL SANTA CATARINA S.A",
+        "CLIFOR TRANS": "231842",
+        "TRANSPORTADORA": "SOTRAN S/A LOGISTICA E TRANSPORTE",
+        "CNPJ": "03286888000169",
+        "STATUS": "ABERTO",
+        "ROTA": "6285",
+        "CIDADE ORIGEM": "NOVA CANTU - PR",
+        "CIDADE DESTINO": "PARANAGUA - PR",
+        "OPERAÇÃO": "COMPRA X VENDA"
+    }
+]
