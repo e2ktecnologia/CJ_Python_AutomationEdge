@@ -51897,7 +51897,8 @@
 																					},
 																					"controlMetaType": "Java",
 																					"name": {
-																						"value": "GEX001 - EXPEDIÇÃO AVULSA CENTRALIZADA                                                   8   SRP - SERVIÇO RPA (ROBO)"
+																						"value": "GEX001",
+																						"operator": "contains"
 																					},
 																					"index": {
 																						"value": "1",
@@ -52092,57 +52093,1696 @@
 																																										"excluded": true
 																																									}
 																																								},
-																																								"id": "Observação"
+																																								"childControls": [],
+																																								"excluded": false
 																																							}
 																																						],
-																																						"id": ""
+																																						"excluded": false
 																																					}
 																																				],
-																																				"id": ""
+																																				"excluded": false
 																																			}
 																																		],
-																																		"id": ""
+																																		"excluded": false
 																																	}
 																																],
-																																"id": "Principal"
+																																"excluded": false
 																															}
 																														],
-																														"id": ""
+																														"excluded": false
 																													}
 																												],
-																												"id": ""
+																												"excluded": false
 																											}
 																										],
-																										"id": ""
+																										"excluded": false
 																									}
 																								],
-																								"id": ""
+																								"excluded": false
 																							}
 																						],
-																						"id": ""
+																						"excluded": false
 																					}
 																				],
-																				"id": "GEX001 - EXPEDIÇÃO AVULSA CENTRALIZADA                                                   8   SRP - SERVIÇO RPA (ROBO)"
+																				"excluded": false
 																			}
 																		],
-																		"id": ""
+																		"excluded": false
 																	}
 																],
-																"id": ""
+																"excluded": false
 															}
 														],
-														"id": ""
+														"excluded": false
 													}
 												],
-												"id": ""
+												"excluded": false
 											}
 										],
-										"id": ""
+										"excluded": false
 									}
 								],
-								"id": "MAXYS - SISTEMA DE GESTÃO CORPORATIVA                                                                                  MAXICON SYSTEMS"
+								"excluded": false
 							}
-						]
+						],
+						"parameters": {
+							"excluded": true,
+							"operator": "equals",
+							"value": ""
+						}
+					}
+				},
+				{
+					"id": "f5b28c67-8990-4c91-9f01-19b36f2e22f2",
+					"name": "Rota_localizar_text",
+					"filePath": "7365b2bd-263b-441e-9267-88e85b18ee52.jpg",
+					"content": {
+						"automationType": "Java",
+						"processName": {
+							"value": "java"
+						},
+						"filePath": {
+							"value": "java.exe"
+						},
+						"version": {
+							"value": "1.3"
+						},
+						"childControls": [
+							{
+								"identifier": {
+									"isDirectChild": {
+										"value": "True"
+									},
+									"className": {
+										"value": "frame"
+									},
+									"controlMetaType": "Java",
+									"name": {
+										"value": "MAXYS - SISTEMA DE GESTÃO CORPORATIVA",
+										"operator": "contains"
+									},
+									"index": {
+										"value": "1",
+										"excluded": true
+									}
+								},
+								"childControls": [
+									{
+										"identifier": {
+											"isDirectChild": {
+												"value": "True"
+											},
+											"className": {
+												"value": "panel"
+											},
+											"controlMetaType": "Java",
+											"name": {
+												"value": "",
+												"excluded": true
+											},
+											"index": {
+												"value": "2"
+											}
+										},
+										"childControls": [
+											{
+												"identifier": {
+													"isDirectChild": {
+														"value": "True"
+													},
+													"className": {
+														"value": "panel"
+													},
+													"controlMetaType": "Java",
+													"name": {
+														"value": "",
+														"excluded": true
+													},
+													"index": {
+														"value": "1",
+														"excluded": true
+													}
+												},
+												"childControls": [
+													{
+														"identifier": {
+															"isDirectChild": {
+																"value": "True"
+															},
+															"className": {
+																"value": "scroll pane"
+															},
+															"controlMetaType": "Java",
+															"name": {
+																"value": "",
+																"excluded": true
+															},
+															"index": {
+																"value": "1",
+																"excluded": true
+															}
+														},
+														"childControls": [
+															{
+																"identifier": {
+																	"isDirectChild": {
+																		"value": "True"
+																	},
+																	"className": {
+																		"value": "viewport"
+																	},
+																	"controlMetaType": "Java",
+																	"name": {
+																		"value": "",
+																		"excluded": true
+																	},
+																	"index": {
+																		"value": "1",
+																		"excluded": true
+																	}
+																},
+																"childControls": [
+																	{
+																		"identifier": {
+																			"isDirectChild": {
+																				"value": "True"
+																			},
+																			"className": {
+																				"value": "desktop pane"
+																			},
+																			"controlMetaType": "Java",
+																			"name": {
+																				"value": "",
+																				"excluded": true
+																			},
+																			"index": {
+																				"value": "1",
+																				"excluded": true
+																			}
+																		},
+																		"childControls": [
+																			{
+																				"identifier": {
+																					"isDirectChild": {
+																						"value": "True"
+																					},
+																					"className": {
+																						"value": "internal frame"
+																					},
+																					"controlMetaType": "Java",
+																					"name": {
+																						"value": "GEX001 - RECEBIMENTO AVULSO CENTRALIZADO",
+																						"operator": "contains"
+																					},
+																					"index": {
+																						"value": "1",
+																						"excluded": true
+																					}
+																				},
+																				"childControls": [
+																					{
+																						"identifier": {
+																							"isDirectChild": {
+																								"value": "True"
+																							},
+																							"className": {
+																								"value": "internal frame"
+																							},
+																							"controlMetaType": "Java",
+																							"name": {
+																								"value": "Selecione a rota"
+																							},
+																							"index": {
+																								"value": "1",
+																								"excluded": true
+																							}
+																						},
+																						"childControls": [
+																							{
+																								"identifier": {
+																									"isDirectChild": {
+																										"value": "True"
+																									},
+																									"className": {
+																										"value": "panel"
+																									},
+																									"controlMetaType": "Java",
+																									"name": {
+																										"value": "",
+																										"excluded": true
+																									},
+																									"index": {
+																										"value": "1",
+																										"excluded": true
+																									}
+																								},
+																								"childControls": [
+																									{
+																										"identifier": {
+																											"isDirectChild": {
+																												"value": "True"
+																											},
+																											"className": {
+																												"value": "panel"
+																											},
+																											"controlMetaType": "Java",
+																											"name": {
+																												"value": "",
+																												"excluded": true
+																											},
+																											"index": {
+																												"value": "2"
+																											}
+																										},
+																										"childControls": [
+																											{
+																												"identifier": {
+																													"isDirectChild": {
+																														"value": "True"
+																													},
+																													"className": {
+																														"value": "text"
+																													},
+																													"controlMetaType": "Java",
+																													"name": {
+																														"value": " Localizar"
+																													},
+																													"index": {
+																														"value": "1",
+																														"excluded": true
+																													}
+																												},
+																												"childControls": [],
+																												"excluded": false
+																											}
+																										],
+																										"excluded": false
+																									}
+																								],
+																								"excluded": false
+																							}
+																						],
+																						"excluded": false
+																					}
+																				],
+																				"excluded": false
+																			}
+																		],
+																		"excluded": false
+																	}
+																],
+																"excluded": false
+															}
+														],
+														"excluded": false
+													}
+												],
+												"excluded": false
+											}
+										],
+										"excluded": false
+									}
+								],
+								"excluded": false
+							}
+						],
+						"parameters": {
+							"excluded": true,
+							"operator": "equals",
+							"value": ""
+						}
+					}
+				},
+				{
+					"id": "be5f4fb1-9efd-4ee6-91bf-0a745e1ba708",
+					"name": "Rota_list",
+					"filePath": "39ff059a-207b-4d24-9e3b-8d8a58f94a22.jpg",
+					"content": {
+						"automationType": "Java",
+						"processName": {
+							"value": "java"
+						},
+						"filePath": {
+							"value": "java.exe"
+						},
+						"version": {
+							"value": "1.3"
+						},
+						"childControls": [
+							{
+								"identifier": {
+									"isDirectChild": {
+										"value": "True"
+									},
+									"className": {
+										"value": "frame"
+									},
+									"controlMetaType": "Java",
+									"name": {
+										"value": "MAXYS - SISTEMA DE GESTÃO CORPORATIVA",
+										"operator": "contains"
+									},
+									"index": {
+										"value": "1",
+										"excluded": true
+									}
+								},
+								"childControls": [
+									{
+										"identifier": {
+											"isDirectChild": {
+												"value": "True"
+											},
+											"className": {
+												"value": "panel"
+											},
+											"controlMetaType": "Java",
+											"name": {
+												"value": "",
+												"excluded": true
+											},
+											"index": {
+												"value": "2"
+											}
+										},
+										"childControls": [
+											{
+												"identifier": {
+													"isDirectChild": {
+														"value": "True"
+													},
+													"className": {
+														"value": "panel"
+													},
+													"controlMetaType": "Java",
+													"name": {
+														"value": "",
+														"excluded": true
+													},
+													"index": {
+														"value": "1",
+														"excluded": true
+													}
+												},
+												"childControls": [
+													{
+														"identifier": {
+															"isDirectChild": {
+																"value": "True"
+															},
+															"className": {
+																"value": "scroll pane"
+															},
+															"controlMetaType": "Java",
+															"name": {
+																"value": "",
+																"excluded": true
+															},
+															"index": {
+																"value": "1",
+																"excluded": true
+															}
+														},
+														"childControls": [
+															{
+																"identifier": {
+																	"isDirectChild": {
+																		"value": "True"
+																	},
+																	"className": {
+																		"value": "viewport"
+																	},
+																	"controlMetaType": "Java",
+																	"name": {
+																		"value": "",
+																		"excluded": true
+																	},
+																	"index": {
+																		"value": "1",
+																		"excluded": true
+																	}
+																},
+																"childControls": [
+																	{
+																		"identifier": {
+																			"isDirectChild": {
+																				"value": "True"
+																			},
+																			"className": {
+																				"value": "desktop pane"
+																			},
+																			"controlMetaType": "Java",
+																			"name": {
+																				"value": "",
+																				"excluded": true
+																			},
+																			"index": {
+																				"value": "1",
+																				"excluded": true
+																			}
+																		},
+																		"childControls": [
+																			{
+																				"identifier": {
+																					"isDirectChild": {
+																						"value": "True"
+																					},
+																					"className": {
+																						"value": "internal frame"
+																					},
+																					"controlMetaType": "Java",
+																					"name": {
+																						"value": "GEX001 - RECEBIMENTO AVULSO CENTRALIZADO",
+																						"operator": "contains"
+																					},
+																					"index": {
+																						"value": "1",
+																						"excluded": true
+																					}
+																				},
+																				"childControls": [
+																					{
+																						"identifier": {
+																							"isDirectChild": {
+																								"value": "True"
+																							},
+																							"className": {
+																								"value": "internal frame"
+																							},
+																							"controlMetaType": "Java",
+																							"name": {
+																								"value": "Selecione a rota"
+																							},
+																							"index": {
+																								"value": "1",
+																								"excluded": true
+																							}
+																						},
+																						"childControls": [
+																							{
+																								"identifier": {
+																									"isDirectChild": {
+																										"value": "True"
+																									},
+																									"className": {
+																										"value": "panel"
+																									},
+																									"controlMetaType": "Java",
+																									"name": {
+																										"value": "",
+																										"excluded": true
+																									},
+																									"index": {
+																										"value": "1",
+																										"excluded": true
+																									}
+																								},
+																								"childControls": [
+																									{
+																										"identifier": {
+																											"isDirectChild": {
+																												"value": "True"
+																											},
+																											"className": {
+																												"value": "scroll pane"
+																											},
+																											"controlMetaType": "Java",
+																											"name": {
+																												"value": "",
+																												"excluded": true
+																											},
+																											"index": {
+																												"value": "1",
+																												"excluded": true
+																											}
+																										},
+																										"childControls": [
+																											{
+																												"identifier": {
+																													"isDirectChild": {
+																														"value": "True"
+																													},
+																													"className": {
+																														"value": "list"
+																													},
+																													"controlMetaType": "Java",
+																													"name": {
+																														"value": "",
+																														"excluded": true
+																													},
+																													"index": {
+																														"value": "1",
+																														"excluded": true
+																													}
+																												},
+																												"childControls": [],
+																												"excluded": false
+																											}
+																										],
+																										"excluded": false
+																									}
+																								],
+																								"excluded": false
+																							}
+																						],
+																						"excluded": false
+																					}
+																				],
+																				"excluded": false
+																			}
+																		],
+																		"excluded": false
+																	}
+																],
+																"excluded": false
+															}
+														],
+														"excluded": false
+													}
+												],
+												"excluded": false
+											}
+										],
+										"excluded": false
+									}
+								],
+								"excluded": false
+							}
+						],
+						"parameters": {
+							"excluded": true,
+							"operator": "equals",
+							"value": ""
+						}
+					}
+				},
+				{
+					"id": "45607cc5-1694-45af-b4c6-1b4198100ea2",
+					"name": "Rota_push_button_ok",
+					"filePath": "cd8249f3-5f3c-4cd0-a57f-2baaa58ea02d.jpg",
+					"content": {
+						"automationType": "Java",
+						"processName": {
+							"value": "java"
+						},
+						"filePath": {
+							"value": "java.exe"
+						},
+						"version": {
+							"value": "1.3"
+						},
+						"childControls": [
+							{
+								"identifier": {
+									"isDirectChild": {
+										"value": "True"
+									},
+									"className": {
+										"value": "frame"
+									},
+									"controlMetaType": "Java",
+									"name": {
+										"value": "MAXYS - SISTEMA DE GESTÃO CORPORATIVA",
+										"operator": "contains"
+									},
+									"index": {
+										"value": "1",
+										"excluded": true
+									}
+								},
+								"childControls": [
+									{
+										"identifier": {
+											"isDirectChild": {
+												"value": "True"
+											},
+											"className": {
+												"value": "panel"
+											},
+											"controlMetaType": "Java",
+											"name": {
+												"value": "",
+												"excluded": true
+											},
+											"index": {
+												"value": "2"
+											}
+										},
+										"childControls": [
+											{
+												"identifier": {
+													"isDirectChild": {
+														"value": "True"
+													},
+													"className": {
+														"value": "panel"
+													},
+													"controlMetaType": "Java",
+													"name": {
+														"value": "",
+														"excluded": true
+													},
+													"index": {
+														"value": "1",
+														"excluded": true
+													}
+												},
+												"childControls": [
+													{
+														"identifier": {
+															"isDirectChild": {
+																"value": "True"
+															},
+															"className": {
+																"value": "scroll pane"
+															},
+															"controlMetaType": "Java",
+															"name": {
+																"value": "",
+																"excluded": true
+															},
+															"index": {
+																"value": "1",
+																"excluded": true
+															}
+														},
+														"childControls": [
+															{
+																"identifier": {
+																	"isDirectChild": {
+																		"value": "True"
+																	},
+																	"className": {
+																		"value": "viewport"
+																	},
+																	"controlMetaType": "Java",
+																	"name": {
+																		"value": "",
+																		"excluded": true
+																	},
+																	"index": {
+																		"value": "1",
+																		"excluded": true
+																	}
+																},
+																"childControls": [
+																	{
+																		"identifier": {
+																			"isDirectChild": {
+																				"value": "True"
+																			},
+																			"className": {
+																				"value": "desktop pane"
+																			},
+																			"controlMetaType": "Java",
+																			"name": {
+																				"value": "",
+																				"excluded": true
+																			},
+																			"index": {
+																				"value": "1",
+																				"excluded": true
+																			}
+																		},
+																		"childControls": [
+																			{
+																				"identifier": {
+																					"isDirectChild": {
+																						"value": "True"
+																					},
+																					"className": {
+																						"value": "internal frame"
+																					},
+																					"controlMetaType": "Java",
+																					"name": {
+																						"value": "GEX001",
+																						"operator": "contains"
+																					},
+																					"index": {
+																						"value": "1",
+																						"excluded": true
+																					}
+																				},
+																				"childControls": [
+																					{
+																						"identifier": {
+																							"isDirectChild": {
+																								"value": "True"
+																							},
+																							"className": {
+																								"value": "internal frame"
+																							},
+																							"controlMetaType": "Java",
+																							"name": {
+																								"value": "Selecione a rota"
+																							},
+																							"index": {
+																								"value": "1",
+																								"excluded": true
+																							}
+																						},
+																						"childControls": [
+																							{
+																								"identifier": {
+																									"isDirectChild": {
+																										"value": "True"
+																									},
+																									"className": {
+																										"value": "panel"
+																									},
+																									"controlMetaType": "Java",
+																									"name": {
+																										"value": "",
+																										"excluded": true
+																									},
+																									"index": {
+																										"value": "1",
+																										"excluded": true
+																									}
+																								},
+																								"childControls": [
+																									{
+																										"identifier": {
+																											"isDirectChild": {
+																												"value": "True"
+																											},
+																											"className": {
+																												"value": "panel"
+																											},
+																											"controlMetaType": "Java",
+																											"name": {
+																												"value": "",
+																												"excluded": true
+																											},
+																											"index": {
+																												"value": "3"
+																											}
+																										},
+																										"childControls": [
+																											{
+																												"identifier": {
+																													"isDirectChild": {
+																														"value": "True"
+																													},
+																													"className": {
+																														"value": "panel"
+																													},
+																													"controlMetaType": "Java",
+																													"name": {
+																														"value": "",
+																														"excluded": true
+																													},
+																													"index": {
+																														"value": "2"
+																													}
+																												},
+																												"childControls": [
+																													{
+																														"identifier": {
+																															"isDirectChild": {
+																																"value": "True"
+																															},
+																															"className": {
+																																"value": "push button"
+																															},
+																															"controlMetaType": "Java",
+																															"name": {
+																																"value": "OK ALT O"
+																															},
+																															"index": {
+																																"value": "1",
+																																"excluded": true
+																															}
+																														},
+																														"childControls": [],
+																														"excluded": false
+																													}
+																												],
+																												"excluded": false
+																											}
+																										],
+																										"excluded": false
+																									}
+																								],
+																								"excluded": false
+																							}
+																						],
+																						"excluded": false
+																					}
+																				],
+																				"excluded": false
+																			}
+																		],
+																		"excluded": false
+																	}
+																],
+																"excluded": false
+															}
+														],
+														"excluded": false
+													}
+												],
+												"excluded": false
+											}
+										],
+										"excluded": false
+									}
+								],
+								"excluded": false
+							}
+						],
+						"parameters": {
+							"excluded": true,
+							"operator": "equals",
+							"value": ""
+						}
+					}
+				},
+				{
+					"id": "d4f38318-9b28-4de3-841c-ef6b5acbb54d",
+					"name": "Rota_Cancelar_btn",
+					"filePath": "74c82cda-f6a7-433a-9750-e6a0bae13b66.jpg",
+					"content": {
+						"automationType": "Java",
+						"processName": {
+							"value": "java"
+						},
+						"filePath": {
+							"value": "java.exe"
+						},
+						"version": {
+							"value": "1.3"
+						},
+						"childControls": [
+							{
+								"identifier": {
+									"isDirectChild": {
+										"value": "True"
+									},
+									"className": {
+										"value": "frame"
+									},
+									"controlMetaType": "Java",
+									"name": {
+										"value": "MAXYS - SISTEMA DE GESTÃO CORPORATIVA",
+										"operator": "contains"
+									},
+									"index": {
+										"value": "1",
+										"excluded": true
+									}
+								},
+								"childControls": [
+									{
+										"identifier": {
+											"isDirectChild": {
+												"value": "True"
+											},
+											"className": {
+												"value": "panel"
+											},
+											"controlMetaType": "Java",
+											"name": {
+												"value": "",
+												"excluded": true
+											},
+											"index": {
+												"value": "2"
+											}
+										},
+										"childControls": [
+											{
+												"identifier": {
+													"isDirectChild": {
+														"value": "True"
+													},
+													"className": {
+														"value": "panel"
+													},
+													"controlMetaType": "Java",
+													"name": {
+														"value": "",
+														"excluded": true
+													},
+													"index": {
+														"value": "1",
+														"excluded": true
+													}
+												},
+												"childControls": [
+													{
+														"identifier": {
+															"isDirectChild": {
+																"value": "True"
+															},
+															"className": {
+																"value": "scroll pane"
+															},
+															"controlMetaType": "Java",
+															"name": {
+																"value": "",
+																"excluded": true
+															},
+															"index": {
+																"value": "1",
+																"excluded": true
+															}
+														},
+														"childControls": [
+															{
+																"identifier": {
+																	"isDirectChild": {
+																		"value": "True"
+																	},
+																	"className": {
+																		"value": "viewport"
+																	},
+																	"controlMetaType": "Java",
+																	"name": {
+																		"value": "",
+																		"excluded": true
+																	},
+																	"index": {
+																		"value": "1",
+																		"excluded": true
+																	}
+																},
+																"childControls": [
+																	{
+																		"identifier": {
+																			"isDirectChild": {
+																				"value": "True"
+																			},
+																			"className": {
+																				"value": "desktop pane"
+																			},
+																			"controlMetaType": "Java",
+																			"name": {
+																				"value": "",
+																				"excluded": true
+																			},
+																			"index": {
+																				"value": "1",
+																				"excluded": true
+																			}
+																		},
+																		"childControls": [
+																			{
+																				"identifier": {
+																					"isDirectChild": {
+																						"value": "True"
+																					},
+																					"className": {
+																						"value": "internal frame"
+																					},
+																					"controlMetaType": "Java",
+																					"name": {
+																						"value": "GEX001",
+																						"operator": "contains"
+																					},
+																					"index": {
+																						"value": "1",
+																						"excluded": true
+																					}
+																				},
+																				"childControls": [
+																					{
+																						"identifier": {
+																							"isDirectChild": {
+																								"value": "True"
+																							},
+																							"className": {
+																								"value": "internal frame"
+																							},
+																							"controlMetaType": "Java",
+																							"name": {
+																								"value": "Selecione a rota"
+																							},
+																							"index": {
+																								"value": "1",
+																								"excluded": true
+																							}
+																						},
+																						"childControls": [
+																							{
+																								"identifier": {
+																									"isDirectChild": {
+																										"value": "True"
+																									},
+																									"className": {
+																										"value": "panel"
+																									},
+																									"controlMetaType": "Java",
+																									"name": {
+																										"value": "",
+																										"excluded": true
+																									},
+																									"index": {
+																										"value": "1",
+																										"excluded": true
+																									}
+																								},
+																								"childControls": [
+																									{
+																										"identifier": {
+																											"isDirectChild": {
+																												"value": "True"
+																											},
+																											"className": {
+																												"value": "panel"
+																											},
+																											"controlMetaType": "Java",
+																											"name": {
+																												"value": "",
+																												"excluded": true
+																											},
+																											"index": {
+																												"value": "3"
+																											}
+																										},
+																										"childControls": [
+																											{
+																												"identifier": {
+																													"isDirectChild": {
+																														"value": "True"
+																													},
+																													"className": {
+																														"value": "panel"
+																													},
+																													"controlMetaType": "Java",
+																													"name": {
+																														"value": "",
+																														"excluded": true
+																													},
+																													"index": {
+																														"value": "2"
+																													}
+																												},
+																												"childControls": [
+																													{
+																														"identifier": {
+																															"isDirectChild": {
+																																"value": "True"
+																															},
+																															"className": {
+																																"value": "push button"
+																															},
+																															"controlMetaType": "Java",
+																															"name": {
+																																"value": "Cancelar ALT C"
+																															},
+																															"index": {
+																																"value": "1",
+																																"excluded": true
+																															}
+																														},
+																														"childControls": [],
+																														"excluded": false
+																													}
+																												],
+																												"excluded": false
+																											}
+																										],
+																										"excluded": false
+																									}
+																								],
+																								"excluded": false
+																							}
+																						],
+																						"excluded": false
+																					}
+																				],
+																				"excluded": false
+																			}
+																		],
+																		"excluded": false
+																	}
+																],
+																"excluded": false
+															}
+														],
+														"excluded": false
+													}
+												],
+												"excluded": false
+											}
+										],
+										"excluded": false
+									}
+								],
+								"excluded": false
+							}
+						],
+						"parameters": {
+							"excluded": true,
+							"operator": "equals",
+							"value": ""
+						}
+					}
+				},
+				{
+					"id": "26148b84-dcde-415d-8785-654471c9ffd1",
+					"name": "Local_de_Embarque_list",
+					"filePath": "6f42330f-89d4-4023-b563-473e1305f65a.jpg",
+					"content": {
+						"automationType": "Java",
+						"processName": {
+							"value": "java"
+						},
+						"filePath": {
+							"value": "java.exe"
+						},
+						"version": {
+							"value": "1.3"
+						},
+						"childControls": [
+							{
+								"identifier": {
+									"isDirectChild": {
+										"value": "True"
+									},
+									"className": {
+										"value": "frame"
+									},
+									"controlMetaType": "Java",
+									"name": {
+										"value": "MAXYS - SISTEMA DE GESTÃO CORPORATIVA",
+										"operator": "contains"
+									},
+									"index": {
+										"value": "1",
+										"excluded": true
+									}
+								},
+								"childControls": [
+									{
+										"identifier": {
+											"isDirectChild": {
+												"value": "True"
+											},
+											"className": {
+												"value": "panel"
+											},
+											"controlMetaType": "Java",
+											"name": {
+												"value": "",
+												"excluded": true
+											},
+											"index": {
+												"value": "2"
+											}
+										},
+										"childControls": [
+											{
+												"identifier": {
+													"isDirectChild": {
+														"value": "True"
+													},
+													"className": {
+														"value": "panel"
+													},
+													"controlMetaType": "Java",
+													"name": {
+														"value": "",
+														"excluded": true
+													},
+													"index": {
+														"value": "1",
+														"excluded": true
+													}
+												},
+												"childControls": [
+													{
+														"identifier": {
+															"isDirectChild": {
+																"value": "True"
+															},
+															"className": {
+																"value": "scroll pane"
+															},
+															"controlMetaType": "Java",
+															"name": {
+																"value": "",
+																"excluded": true
+															},
+															"index": {
+																"value": "1",
+																"excluded": true
+															}
+														},
+														"childControls": [
+															{
+																"identifier": {
+																	"isDirectChild": {
+																		"value": "True"
+																	},
+																	"className": {
+																		"value": "viewport"
+																	},
+																	"controlMetaType": "Java",
+																	"name": {
+																		"value": "",
+																		"excluded": true
+																	},
+																	"index": {
+																		"value": "1",
+																		"excluded": true
+																	}
+																},
+																"childControls": [
+																	{
+																		"identifier": {
+																			"isDirectChild": {
+																				"value": "True"
+																			},
+																			"className": {
+																				"value": "desktop pane"
+																			},
+																			"controlMetaType": "Java",
+																			"name": {
+																				"value": "",
+																				"excluded": true
+																			},
+																			"index": {
+																				"value": "1",
+																				"excluded": true
+																			}
+																		},
+																		"childControls": [
+																			{
+																				"identifier": {
+																					"isDirectChild": {
+																						"value": "True"
+																					},
+																					"className": {
+																						"value": "internal frame"
+																					},
+																					"controlMetaType": "Java",
+																					"name": {
+																						"value": "GEX001",
+																						"operator": "contains"
+																					},
+																					"index": {
+																						"value": "1",
+																						"excluded": true
+																					}
+																				},
+																				"childControls": [
+																					{
+																						"identifier": {
+																							"isDirectChild": {
+																								"value": "True"
+																							},
+																							"className": {
+																								"value": "internal frame"
+																							},
+																							"controlMetaType": "Java",
+																							"name": {
+																								"value": "Local de embarque"
+																							},
+																							"index": {
+																								"value": "1",
+																								"excluded": true
+																							}
+																						},
+																						"childControls": [
+																							{
+																								"identifier": {
+																									"isDirectChild": {
+																										"value": "True"
+																									},
+																									"className": {
+																										"value": "panel"
+																									},
+																									"controlMetaType": "Java",
+																									"name": {
+																										"value": "",
+																										"excluded": true
+																									},
+																									"index": {
+																										"value": "1",
+																										"excluded": true
+																									}
+																								},
+																								"childControls": [
+																									{
+																										"identifier": {
+																											"isDirectChild": {
+																												"value": "True"
+																											},
+																											"className": {
+																												"value": "scroll pane"
+																											},
+																											"controlMetaType": "Java",
+																											"name": {
+																												"value": "",
+																												"excluded": true
+																											},
+																											"index": {
+																												"value": "1",
+																												"excluded": true
+																											}
+																										},
+																										"childControls": [
+																											{
+																												"identifier": {
+																													"isDirectChild": {
+																														"value": "True"
+																													},
+																													"className": {
+																														"value": "list"
+																													},
+																													"controlMetaType": "Java",
+																													"name": {
+																														"value": "",
+																														"excluded": true
+																													},
+																													"index": {
+																														"value": "1",
+																														"excluded": true
+																													}
+																												},
+																												"childControls": [],
+																												"excluded": false
+																											}
+																										],
+																										"excluded": false
+																									}
+																								],
+																								"excluded": false
+																							}
+																						],
+																						"excluded": false
+																					}
+																				],
+																				"excluded": false
+																			}
+																		],
+																		"excluded": false
+																	}
+																],
+																"excluded": false
+															}
+														],
+														"excluded": false
+													}
+												],
+												"excluded": false
+											}
+										],
+										"excluded": false
+									}
+								],
+								"excluded": false
+							}
+						],
+						"parameters": {
+							"excluded": true,
+							"operator": "equals",
+							"value": ""
+						}
+					}
+				},
+				{
+					"id": "ff0dd61d-8618-44d4-b19e-84884f00c556",
+					"name": "Local_Embarque_button_cancelar_alt_c",
+					"filePath": "93594118-559f-40ff-adbd-80a7456d101d.jpg",
+					"content": {
+						"automationType": "Java",
+						"processName": {
+							"value": "java"
+						},
+						"filePath": {
+							"value": "java.exe"
+						},
+						"version": {
+							"value": "1.3"
+						},
+						"childControls": [
+							{
+								"identifier": {
+									"isDirectChild": {
+										"value": "True"
+									},
+									"className": {
+										"value": "frame"
+									},
+									"controlMetaType": "Java",
+									"name": {
+										"value": "MAXYS - SISTEMA DE GESTÃO CORPORATIVA",
+										"operator": "contains"
+									},
+									"index": {
+										"value": "1",
+										"excluded": true
+									}
+								},
+								"childControls": [
+									{
+										"identifier": {
+											"isDirectChild": {
+												"value": "True"
+											},
+											"className": {
+												"value": "panel"
+											},
+											"controlMetaType": "Java",
+											"name": {
+												"value": "",
+												"excluded": true
+											},
+											"index": {
+												"value": "2"
+											}
+										},
+										"childControls": [
+											{
+												"identifier": {
+													"isDirectChild": {
+														"value": "True"
+													},
+													"className": {
+														"value": "panel"
+													},
+													"controlMetaType": "Java",
+													"name": {
+														"value": "",
+														"excluded": true
+													},
+													"index": {
+														"value": "1",
+														"excluded": true
+													}
+												},
+												"childControls": [
+													{
+														"identifier": {
+															"isDirectChild": {
+																"value": "True"
+															},
+															"className": {
+																"value": "scroll pane"
+															},
+															"controlMetaType": "Java",
+															"name": {
+																"value": "",
+																"excluded": true
+															},
+															"index": {
+																"value": "1",
+																"excluded": true
+															}
+														},
+														"childControls": [
+															{
+																"identifier": {
+																	"isDirectChild": {
+																		"value": "True"
+																	},
+																	"className": {
+																		"value": "viewport"
+																	},
+																	"controlMetaType": "Java",
+																	"name": {
+																		"value": "",
+																		"excluded": true
+																	},
+																	"index": {
+																		"value": "1",
+																		"excluded": true
+																	}
+																},
+																"childControls": [
+																	{
+																		"identifier": {
+																			"isDirectChild": {
+																				"value": "True"
+																			},
+																			"className": {
+																				"value": "desktop pane"
+																			},
+																			"controlMetaType": "Java",
+																			"name": {
+																				"value": "",
+																				"excluded": true
+																			},
+																			"index": {
+																				"value": "1",
+																				"excluded": true
+																			}
+																		},
+																		"childControls": [
+																			{
+																				"identifier": {
+																					"isDirectChild": {
+																						"value": "True"
+																					},
+																					"className": {
+																						"value": "internal frame"
+																					},
+																					"controlMetaType": "Java",
+																					"name": {
+																						"value": "GEX001",
+																						"operator": "contains"
+																					},
+																					"index": {
+																						"value": "1",
+																						"excluded": true
+																					}
+																				},
+																				"childControls": [
+																					{
+																						"identifier": {
+																							"isDirectChild": {
+																								"value": "True"
+																							},
+																							"className": {
+																								"value": "internal frame"
+																							},
+																							"controlMetaType": "Java",
+																							"name": {
+																								"value": "Local de embarque"
+																							},
+																							"index": {
+																								"value": "1",
+																								"excluded": true
+																							}
+																						},
+																						"childControls": [
+																							{
+																								"identifier": {
+																									"isDirectChild": {
+																										"value": "True"
+																									},
+																									"className": {
+																										"value": "panel"
+																									},
+																									"controlMetaType": "Java",
+																									"name": {
+																										"value": "",
+																										"excluded": true
+																									},
+																									"index": {
+																										"value": "1",
+																										"excluded": true
+																									}
+																								},
+																								"childControls": [
+																									{
+																										"identifier": {
+																											"isDirectChild": {
+																												"value": "True"
+																											},
+																											"className": {
+																												"value": "panel"
+																											},
+																											"controlMetaType": "Java",
+																											"name": {
+																												"value": "",
+																												"excluded": true
+																											},
+																											"index": {
+																												"value": "3"
+																											}
+																										},
+																										"childControls": [
+																											{
+																												"identifier": {
+																													"isDirectChild": {
+																														"value": "True"
+																													},
+																													"className": {
+																														"value": "panel"
+																													},
+																													"controlMetaType": "Java",
+																													"name": {
+																														"value": "",
+																														"excluded": true
+																													},
+																													"index": {
+																														"value": "2"
+																													}
+																												},
+																												"childControls": [
+																													{
+																														"identifier": {
+																															"isDirectChild": {
+																																"value": "True"
+																															},
+																															"className": {
+																																"value": "push button"
+																															},
+																															"controlMetaType": "Java",
+																															"name": {
+																																"value": "Cancelar ALT C"
+																															},
+																															"index": {
+																																"value": "1",
+																																"excluded": true
+																															}
+																														},
+																														"childControls": [],
+																														"excluded": false
+																													}
+																												],
+																												"excluded": false
+																											}
+																										],
+																										"excluded": false
+																									}
+																								],
+																								"excluded": false
+																							}
+																						],
+																						"excluded": false
+																					}
+																				],
+																				"excluded": false
+																			}
+																		],
+																		"excluded": false
+																	}
+																],
+																"excluded": false
+															}
+														],
+														"excluded": false
+													}
+												],
+												"excluded": false
+											}
+										],
+										"excluded": false
+									}
+								],
+								"excluded": false
+							}
+						],
+						"parameters": {
+							"excluded": true,
+							"operator": "equals",
+							"value": ""
+						}
 					}
 				}
 			]
@@ -79388,6 +81028,280 @@
 																					}
 																				],
 																				"id": "GRE001 - RECEBIMENTO AVULSO CENTRALIZADO                                                   8   SRP - SERVIÇO RPA (ROBO)"
+																			}
+																		],
+																		"id": ""
+																	}
+																],
+																"id": ""
+															}
+														],
+														"id": ""
+													}
+												],
+												"id": ""
+											}
+										],
+										"id": ""
+									}
+								],
+								"id": "MAXYS - SISTEMA DE GESTÃO CORPORATIVA                                                                                  MAXICON SYSTEMS"
+							}
+						]
+					}
+				},
+				{
+					"id": "c9fcd8b8-6093-406b-ac83-db43b17de77f",
+					"name": "push_button_cancelar_alt_c",
+					"filePath": "7e9d0400-fc70-4099-a418-476544b60aa6.jpg",
+					"content": {
+						"automationType": "Java",
+						"processName": {
+							"value": "java"
+						},
+						"filePath": {
+							"value": "java.exe"
+						},
+						"version": {
+							"value": "1.3"
+						},
+						"childControls": [
+							{
+								"identifier": {
+									"isDirectChild": {
+										"value": "True"
+									},
+									"className": {
+										"value": "frame"
+									},
+									"controlMetaType": "Java",
+									"name": {
+										"value": "MAXYS - SISTEMA DE GESTÃO CORPORATIVA                                                                                  MAXICON SYSTEMS"
+									},
+									"index": {
+										"value": "1",
+										"excluded": true
+									}
+								},
+								"childControls": [
+									{
+										"identifier": {
+											"isDirectChild": {
+												"value": "True"
+											},
+											"className": {
+												"value": "panel"
+											},
+											"controlMetaType": "Java",
+											"name": {
+												"value": "",
+												"excluded": true
+											},
+											"index": {
+												"value": "2"
+											}
+										},
+										"childControls": [
+											{
+												"identifier": {
+													"isDirectChild": {
+														"value": "True"
+													},
+													"className": {
+														"value": "panel"
+													},
+													"controlMetaType": "Java",
+													"name": {
+														"value": "",
+														"excluded": true
+													},
+													"index": {
+														"value": "1",
+														"excluded": true
+													}
+												},
+												"childControls": [
+													{
+														"identifier": {
+															"isDirectChild": {
+																"value": "True"
+															},
+															"className": {
+																"value": "scroll pane"
+															},
+															"controlMetaType": "Java",
+															"name": {
+																"value": "",
+																"excluded": true
+															},
+															"index": {
+																"value": "1",
+																"excluded": true
+															}
+														},
+														"childControls": [
+															{
+																"identifier": {
+																	"isDirectChild": {
+																		"value": "True"
+																	},
+																	"className": {
+																		"value": "viewport"
+																	},
+																	"controlMetaType": "Java",
+																	"name": {
+																		"value": "",
+																		"excluded": true
+																	},
+																	"index": {
+																		"value": "1",
+																		"excluded": true
+																	}
+																},
+																"childControls": [
+																	{
+																		"identifier": {
+																			"isDirectChild": {
+																				"value": "True"
+																			},
+																			"className": {
+																				"value": "desktop pane"
+																			},
+																			"controlMetaType": "Java",
+																			"name": {
+																				"value": "",
+																				"excluded": true
+																			},
+																			"index": {
+																				"value": "1",
+																				"excluded": true
+																			}
+																		},
+																		"childControls": [
+																			{
+																				"identifier": {
+																					"isDirectChild": {
+																						"value": "True"
+																					},
+																					"className": {
+																						"value": "internal frame"
+																					},
+																					"controlMetaType": "Java",
+																					"name": {
+																						"value": "GEX001 - RECEBIMENTO AVULSO CENTRALIZADO                                                   2   SRP - SERVIÇO RPA (ROBO)"
+																					},
+																					"index": {
+																						"value": "1",
+																						"excluded": true
+																					}
+																				},
+																				"childControls": [
+																					{
+																						"identifier": {
+																							"isDirectChild": {
+																								"value": "True"
+																							},
+																							"className": {
+																								"value": "internal frame"
+																							},
+																							"controlMetaType": "Java",
+																							"name": {
+																								"value": "Local de embarque"
+																							},
+																							"index": {
+																								"value": "1",
+																								"excluded": true
+																							}
+																						},
+																						"childControls": [
+																							{
+																								"identifier": {
+																									"isDirectChild": {
+																										"value": "True"
+																									},
+																									"className": {
+																										"value": "panel"
+																									},
+																									"controlMetaType": "Java",
+																									"name": {
+																										"value": "",
+																										"excluded": true
+																									},
+																									"index": {
+																										"value": "1",
+																										"excluded": true
+																									}
+																								},
+																								"childControls": [
+																									{
+																										"identifier": {
+																											"isDirectChild": {
+																												"value": "True"
+																											},
+																											"className": {
+																												"value": "panel"
+																											},
+																											"controlMetaType": "Java",
+																											"name": {
+																												"value": "",
+																												"excluded": true
+																											},
+																											"index": {
+																												"value": "3"
+																											}
+																										},
+																										"childControls": [
+																											{
+																												"identifier": {
+																													"isDirectChild": {
+																														"value": "True"
+																													},
+																													"className": {
+																														"value": "panel"
+																													},
+																													"controlMetaType": "Java",
+																													"name": {
+																														"value": "",
+																														"excluded": true
+																													},
+																													"index": {
+																														"value": "2"
+																													}
+																												},
+																												"childControls": [
+																													{
+																														"identifier": {
+																															"isDirectChild": {
+																																"value": "True"
+																															},
+																															"className": {
+																																"value": "push button"
+																															},
+																															"controlMetaType": "Java",
+																															"name": {
+																																"value": "Cancelar ALT C"
+																															},
+																															"index": {
+																																"value": "1",
+																																"excluded": true
+																															}
+																														},
+																														"id": "Cancelar ALT C"
+																													}
+																												],
+																												"id": ""
+																											}
+																										],
+																										"id": ""
+																									}
+																								],
+																								"id": ""
+																							}
+																						],
+																						"id": "Local de embarque"
+																					}
+																				],
+																				"id": "GEX001 - RECEBIMENTO AVULSO CENTRALIZADO                                                   2   SRP - SERVIÇO RPA (ROBO)"
 																			}
 																		],
 																		"id": ""

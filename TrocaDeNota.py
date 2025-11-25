@@ -382,7 +382,7 @@ def _ProcessaGRE001(NFE,novo_contrato,nome_do_motorista,placa,uf,analise,transge
         if clicknium.is_existing(locator.java.maxys_GEX001.Popup_Contrato_button_cancelar):
             ui(locator.java.maxys_GEX001.Popup_Contrato_button_cancelar).click()
 
-def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia,emitCNPJ,lacre,tarifa_frete):
+def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia,emitCNPJ,lacre,tarifa_frete,lote,rota):
     
     # Espera tela formação de lote click OK
     if clicknium.is_existing(locator.java.maxys_VFS014.Observacao_Sucesso,timeout=15):
@@ -454,6 +454,50 @@ def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia,emitCNPJ,lac
         OK_Transportador = ui(locator.java.maxys_GEX001.Transportador_push_button_ok)
         OK_Transportador.click()
     
+    # Se Existir Popup Observacao
+    if clicknium.is_existing(locator.java.maxys_VFS014.Observacao_Sucesso):
+        Mensagem = ui(locator.java.maxys_VFS014.Observacao_Mensagem).get_text()
+        if "paga frete" in Mensagem: 
+            ui(locator.java.maxys_VFS014.Observacao_OK).click()
+        elif "A movimentação deste contrato está associada a CMI" in Mensagem: 
+            ui(locator.java.maxys_VFS014.Observacao_OK).click()
+        else:
+            _fechar_Observacao()
+
+    # Digitar Tela Trasportador a transportadora (quando tem mais de 1 rota precisa buscar por rota)
+    if clicknium.is_existing(locator.java.maxys_GEX001.Rota_localizar_text):
+        transportador_text = ui(locator.java.maxys_GEX001.Rota_localizar_text)
+        transportador_text.clear_text("send-hotkey")
+        transportador_text.set_text(f"%{clifor_transportadora}%{rota}")
+        transportador_text.send_hotkey("{ENTER}")
+
+        if ui(locator.java.maxys_GEX001.Rota_list).get_text()=='':
+            
+            cancelar = ui(locator.java.maxys_GEX001.Rota_Cancelar_btn)
+            cancelar.click()
+            autoit.Sleep(1000)
+            #_pendencia("Transportador não vinculado ao contrato de venda",number)
+            
+            raise Exception(f"Transportador com clifor {clifor_transportadora} não vinculado ao contrato de venda com tarifa frete {tarifa_frete}.")
+
+        # Click Localizar
+        localizar = ui(locator.java.maxys_GEX001.Rota_localizar_text)
+        localizar.click()
+
+        # Click OK
+        OK_Transportador = ui(locator.java.maxys_GEX001.Rota_push_button_ok)
+        OK_Transportador.click()
+    
+    # Se Existir Popup Observacao
+    if clicknium.is_existing(locator.java.maxys_VFS014.Observacao_Sucesso):
+        Mensagem = ui(locator.java.maxys_VFS014.Observacao_Mensagem).get_text()
+        if "paga frete" in Mensagem: 
+            ui(locator.java.maxys_VFS014.Observacao_OK).click()
+        elif "A movimentação deste contrato está associada a CMI" in Mensagem: 
+            ui(locator.java.maxys_VFS014.Observacao_OK).click()
+        else:
+            _fechar_Observacao()
+
     # Digitar Tela Trasportador a transportadora (quando tem mais de 1 rota precisa buscar por tarifa)
     if clicknium.is_existing(locator.java.maxys_GEX001.Transportador_localizar_text):
         transportador_text = ui(locator.java.maxys_GEX001.Transportador_localizar_text)
@@ -478,17 +522,33 @@ def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia,emitCNPJ,lac
         OK_Transportador = ui(locator.java.maxys_GEX001.Transportador_push_button_ok)
         OK_Transportador.click()
 
+    # Se Existir Popup Observacao
+    if clicknium.is_existing(locator.java.maxys_VFS014.Observacao_Sucesso):
+        Mensagem = ui(locator.java.maxys_VFS014.Observacao_Mensagem).get_text()
+        if "paga frete" in Mensagem: 
+            ui(locator.java.maxys_VFS014.Observacao_OK).click()
+        elif "A movimentação deste contrato está associada a CMI" in Mensagem: 
+            ui(locator.java.maxys_VFS014.Observacao_OK).click()
+        else:
+            _fechar_Observacao()
 
+   # Observação
+    infAdic = ""
+    if lote != "Lote(s) não encontrado(s)":
+        infAdic = f"Lote(s): {lote}"
 
-
-    # Observação
     if lacre != "Lacre(s) não encontrado(s)":
-        ui(locator.java.maxys_GEX001.text_observação).set_text(lacre)    
+        infAdic = infAdic + " " + f"Lacre(s): {lacre}"
+        
+    if infAdic != "":
+        ui(locator.java.maxys_GEX001.text_observação).set_text(f"{infAdic}")
     
     # Embarque
-    if empresa == 6:
+    # if empresa == 6:
 
-        embarque = ui(locator.java.maxys_GEX001.Principal_local_de_embarque_text)
+    embarque = ui(locator.java.maxys_GEX001.Principal_local_de_embarque_text)
+    if embarque.get_text() == "":
+
         embarque.send_hotkey("{F9}")
         
         # Limpa campo Localizar e settext CNPJ Emitente
@@ -505,6 +565,16 @@ def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia,emitCNPJ,lac
         ui(locator.java.maxys_GEX001.push_button_localizar_alt_l).click()
         
         autoit.sleep(600)
+
+        if ui(locator.java.maxys_GEX001.Local_de_Embarque_list).get_text()=='':
+            
+            cancelar = ui(locator.java.maxys_GEX001.Local_Embarque_button_cancelar_alt_c)
+            cancelar.click()
+            autoit.Sleep(1000)
+            #_pendencia("Transportador não vinculado ao contrato de venda",number)
+            
+            raise Exception(f"Local de embarque com clifor {emitCNPJ} não encontrado!")
+
 
         # Click OK
         ui(locator.java.maxys_GEX001.push_button_ok_alt_o).click()
@@ -740,7 +810,7 @@ if __name__ == "__main__":
             df.loc[index, 'DataLog_Entrada'] = dataLog
             
             # Processa GEX001
-            NrNFE=_ProcessaGEX001(row['contrato_de_venda'],str(row['clifor_transportadora']),row["transgenia"],row["emitCNPJ"], row["Lacre"], row["TARIFA FRETE"])
+            NrNFE=_ProcessaGEX001(row['contrato_de_venda'],str(row['clifor_transportadora']),row["transgenia"],row["emitCNPJ"], row["Lacre"], row["TARIFA FRETE"], row["Lote"], row["ROTA"])
 
             current_date = datetime.datetime.now()
             dataLog = current_date.strftime("%d/%m/%Y %H:%M:%S")
