@@ -30,8 +30,8 @@ try:
     
 except:
     
-    excel_file_base = r"C:\Studio\Process-Studio_prod\process-studio\ps-workspace\CJ_Maxys_TrocaDeNota_Retorno\Base.xlsx"
-    excel_Processamento = r"C:\Studio\Process-Studio_prod\process-studio\ps-workspace\CJ_Maxys_TrocaDeNota_Retorno\Base_Processada.xlsx"
+    excel_file_base = r"C:\Studio\Process-Studio_prod\process-studio\ps-workspace\CJ_Teste\Base.xlsx"
+    excel_Processamento = r"C:\Studio\Process-Studio_prod\process-studio\ps-workspace\CJ_Teste\Base_Processada.xlsx"
     folderXML = r"C:\Temp\XML"
     EnvMaxyCon = " -url http://maxys.cjtrade.com.br:7777/forms/frmservlet?config=maxys_prod_app"
     pass
@@ -159,7 +159,7 @@ def _FecharSistema():
 def _fechar_Observacao():
     if clicknium.is_existing(locator.java.maxys_VFS014.Observacao_Sucesso):
         Mensagem = ui(locator.java.maxys_VFS014.Observacao_Mensagem).get_text()
-        if "obtido através da chave de acesso não está cadastrado" in Mensagem:
+        if "obtido através da chave de acesso não está cadastrado" in Mensagem or "O valor unitário informado" in Mensagem:
             ui(locator.java.maxys_VFS014.Observacao_OK).click()
         else:    
             ui(locator.java.maxys_VFS014.Observacao_OK).click()
@@ -244,6 +244,7 @@ def _ProcessaGRE001(NFE,novo_contrato,nome_do_motorista,placa,uf,analise,transge
         if clicknium.wait_appear(locator.java.maxys_GRE001.Transportador.pesquisa_transportador,wait_timeout=10):
             
             p_transportador = ui(locator.java.maxys_GRE001.Transportador.pesquisa_transportador)
+            p_transportador.clear_text("send-hotkey","HSED")
             p_transportador.set_text(f"%")
             autoit.sleep(500)
             p_transportador.send_hotkey("{ENTER}")
@@ -279,6 +280,9 @@ def _ProcessaGRE001(NFE,novo_contrato,nome_do_motorista,placa,uf,analise,transge
     else:
         ui(locator.java.maxys_GRE001.text_placa).send_hotkey("{TAB}")
 
+    if clicknium.is_existing(locator.java.maxys_GRE001.Janela_Atencao):
+        ui(locator.java.maxys_GRE001.JanelaAtencao_btn_sim).click()
+
     _fechar_Observacao()
     
     # Digitar UF
@@ -291,28 +295,32 @@ def _ProcessaGRE001(NFE,novo_contrato,nome_do_motorista,placa,uf,analise,transge
     else:
         ui(locator.java.maxys_GRE001.text_uf).send_hotkey("{TAB}")
 
+
     # Click Tab Analise
     ui(locator.java.maxys_GRE001.page_tab_análise).click()
 
-    i = 16
-    while True:
-        
-        dict = {"index":i}
-        
-        if ui(locator.java.maxys_GRE001.text_table_analise,dict).get_text() == "" :
-            break
+    # Se continuar aparecer o campo UF, sinal que analise esta desativada    
+    if not 'showing' in ui(locator.java.maxys_GRE001.text_uf).get_property("States"):
 
-        # Get Values Analise
-        value_analise = analise[ui(locator.java.maxys_GRE001.text_table_analise,dict).get_text()]
+        i = 16
+        while True:
+            
+            dict = {"index":i}
+            
+            if ui(locator.java.maxys_GRE001.text_table_analise,dict).get_text() == "" :
+                break
 
-        # Set Value
-        dict = {"index":i-15}
-        ui(locator.java.maxys_GRE001.text_resultado_deorigem,dict).click()
-        ui(locator.java.maxys_GRE001.text_resultado_deorigem,dict).clear_text("send-hotkey")
-        ui(locator.java.maxys_GRE001.text_resultado_deorigem,dict).set_text(value_analise)
-        ui(locator.java.maxys_GRE001.text_resultado_deorigem,dict).send_hotkey("{TAB}")
+            # Get Values Analise
+            value_analise = analise[ui(locator.java.maxys_GRE001.text_table_analise,dict).get_text()]
 
-        i=i+1
+            # Set Value
+            dict = {"index":i-15}
+            ui(locator.java.maxys_GRE001.text_resultado_deorigem,dict).click()
+            ui(locator.java.maxys_GRE001.text_resultado_deorigem,dict).clear_text("send-hotkey")
+            ui(locator.java.maxys_GRE001.text_resultado_deorigem,dict).set_text(value_analise)
+            ui(locator.java.maxys_GRE001.text_resultado_deorigem,dict).send_hotkey("{TAB}")
+
+            i=i+1
     
     # Click Tab Fornecedor
     ui(locator.java.maxys_GRE001.page_tab_fornecedores).click()
@@ -374,7 +382,7 @@ def _ProcessaGRE001(NFE,novo_contrato,nome_do_motorista,placa,uf,analise,transge
         if clicknium.is_existing(locator.java.maxys_GEX001.Popup_Contrato_button_cancelar):
             ui(locator.java.maxys_GEX001.Popup_Contrato_button_cancelar).click()
 
-def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia,emitCNPJ):
+def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia,emitCNPJ,lacre,tarifa_frete):
     
     # Espera tela formação de lote click OK
     if clicknium.is_existing(locator.java.maxys_VFS014.Observacao_Sucesso,timeout=15):
@@ -446,6 +454,36 @@ def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia,emitCNPJ):
         OK_Transportador = ui(locator.java.maxys_GEX001.Transportador_push_button_ok)
         OK_Transportador.click()
     
+    # Digitar Tela Trasportador a transportadora (quando tem mais de 1 rota precisa buscar por tarifa)
+    if clicknium.is_existing(locator.java.maxys_GEX001.Transportador_localizar_text):
+        transportador_text = ui(locator.java.maxys_GEX001.Transportador_localizar_text)
+        transportador_text.clear_text("send-hotkey")
+        transportador_text.set_text(f"%{clifor_transportadora}%{tarifa_frete}")
+        transportador_text.send_hotkey("{ENTER}")
+
+        if ui(locator.java.maxys_GEX001.Transportadora_list).get_text()=='':
+            
+            cancelar = ui(locator.java.maxys_GEX001.Transportadora_Cancelar_btn)
+            cancelar.click()
+            autoit.Sleep(1000)
+            #_pendencia("Transportador não vinculado ao contrato de venda",number)
+            
+            raise Exception(f"Transportador com clifor {clifor_transportadora} não vinculado ao contrato de venda com tarifa frete {tarifa_frete}.")
+
+        # Click Localizar
+        localizar = ui(locator.java.maxys_GEX001.Transportador_localizar_text)
+        localizar.click()
+
+        # Click OK
+        OK_Transportador = ui(locator.java.maxys_GEX001.Transportador_push_button_ok)
+        OK_Transportador.click()
+
+
+
+
+    # Observação
+    if lacre != "Lacre(s) não encontrado(s)":
+        ui(locator.java.maxys_GEX001.text_observação).set_text(lacre)    
     
     # Embarque
     if empresa == 6:
@@ -702,7 +740,7 @@ if __name__ == "__main__":
             df.loc[index, 'DataLog_Entrada'] = dataLog
             
             # Processa GEX001
-            NrNFE=_ProcessaGEX001(row['contrato_de_venda'],str(row['clifor_transportadora']),row["transgenia"],row["emitCNPJ"])
+            NrNFE=_ProcessaGEX001(row['contrato_de_venda'],str(row['clifor_transportadora']),row["transgenia"],row["emitCNPJ"], row["Lacre"], row["TARIFA FRETE"])
 
             current_date = datetime.datetime.now()
             dataLog = current_date.strftime("%d/%m/%Y %H:%M:%S")

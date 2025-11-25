@@ -30,8 +30,8 @@ try:
     
 except:
 
-    excel_file_base = r"C:\Studio\Process-Studio\process-studio\ps-workspace\CJ_TrocaDeNota_Retorno\Base.xlsx"
-    excel_Processamento = r"C:\Studio\Process-Studio\process-studio\ps-workspace\CJ_TrocaDeNota_Retorno\Base_Processada.xlsx"
+    excel_file_base = r"C:\Studio\Process-Studio_prod\process-studio\ps-workspace\CJ_Teste\Base.xlsx"
+    excel_Processamento = r"C:\Studio\Process-Studio_prod\process-studio\ps-workspace\CJ_Teste\Base_Processada.xlsx"
     folderXML = r"C:\Temp\XML"
     EnvMaxyCon = " -url http://maxys.cjtrade.com.br:7777/forms/frmservlet?config=maxys_prod_app"
     pass
@@ -192,6 +192,8 @@ def _ProcessaGEX004(contrato, placa, uf , motorista,peso_nf, valor,nota_fiscal, 
     # Digita Contrato
     ui(locator.java.maxys_GEX004.text_contratopedido_de_graos).set_text(contrato)
     ui(locator.java.maxys_GEX004.text_contratopedido_de_graos).send_hotkey("{TAB 3}")
+
+    _fechar_Observacao()
     
     # Seleciona Tranpostadora
     if not clicknium.is_existing(locator.java.maxys_GEX004.input_Localizador):
@@ -239,8 +241,21 @@ def _ProcessaGEX004(contrato, placa, uf , motorista,peso_nf, valor,nota_fiscal, 
     
     # Seleciona Campo com Numero da Nota Fiscal de Referencia
     #_selecionaTabela(peso_nf,valor, nota_fiscal)
-    variable = {"index": 3}
-    ui(locator.java.maxys_GEX004.check_box_romaneios,variable).click()
+    i = 3
+    while True:
+        
+        # Verificar se o total selecionado é igual ao da nota fiscal
+        if ui(locator.java.maxys_GEX004.text_Total).get_text().replace(".", "") == str(int(peso_nf)).replace(".", ""):
+            break
+
+        if i == 13:
+            raise Exception ("Não existe saldo suficiente para realizar o retorno!") 
+
+
+        variable = {"index": i}
+        ui(locator.java.maxys_GEX004.check_box_romaneios,variable).click()
+
+        i=i+1
 
     # Salvar 
     ui(locator.java.maxys_GEX004.push_button_salvar).click()
@@ -282,8 +297,7 @@ def _ProcessaGEX004(contrato, placa, uf , motorista,peso_nf, valor,nota_fiscal, 
     # Click Ok
     ui(locator.java.maxys_GEX004.vinculada_expedicao_ok).click()
     
-
-def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia):
+def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia,lacre):
     
     # Espera tela formação de lote click OK
     if clicknium.is_existing(locator.java.maxys_VFS014.Observacao_Sucesso,timeout=15):
@@ -357,7 +371,51 @@ def _ProcessaGEX001(contrato_venda,clifor_transportadora,transgenia):
         OK_Transportador = ui(locator.java.maxys_GEX001.Transportador_push_button_ok)
         OK_Transportador.click()
     
-    
+    # Se Existir Popup Observacao
+    if clicknium.is_existing(locator.java.maxys_VFS014.Observacao_Sucesso):
+        Mensagem = ui(locator.java.maxys_VFS014.Observacao_Mensagem).get_text()
+        if "paga frete" in Mensagem: 
+            ui(locator.java.maxys_VFS014.Observacao_OK).click()
+        elif "A movimentação deste contrato está associada a CMI" in Mensagem: 
+            ui(locator.java.maxys_VFS014.Observacao_OK).click()
+        else:
+            _fechar_Observacao()
+
+    # Digita Transportador
+    if clicknium.is_existing(locator.java.maxys_GEX001.Principal_transportador_text):
+        principal_transportador = ui(locator.java.maxys_GEX001.Principal_transportador_text)
+
+        if principal_transportador.get_text().replace(".","") != clifor_transportadora:
+            principal_transportador.set_text(clifor_transportadora)
+
+    # Digitar Tela Trasportador a transportadora
+    if clicknium.is_existing(locator.java.maxys_GEX001.Transportador_localizar_text):
+        transportador_text = ui(locator.java.maxys_GEX001.Transportador_localizar_text)
+        transportador_text.clear_text("send-hotkey")
+        transportador_text.set_text(f"%{clifor_transportadora}")
+        transportador_text.send_hotkey("{ENTER}")
+
+        if ui(locator.java.maxys_GEX001.Transportadora_list).get_text()=='':
+            
+            cancelar = ui(locator.java.maxys_GEX001.Transportadora_Cancelar_btn)
+            cancelar.click()
+            autoit.Sleep(1000)
+            #_pendencia("Transportador não vinculado ao contrato de venda",number)
+            
+            raise Exception("Transportador não vinculado ao contrato de venda")
+
+        # Click Localizar
+        localizar = ui(locator.java.maxys_GEX001.Transportador_localizar_text)
+        localizar.click()
+
+        # Click OK
+        OK_Transportador = ui(locator.java.maxys_GEX001.Transportador_push_button_ok)
+        OK_Transportador.click()
+
+    # Observação
+    if lacre != "Lacre(s) não encontrado(s)":
+        ui(locator.java.maxys_GEX001.text_observação).set_text(lacre)
+
     # Embarque
     #wshell.popup("Teste",0)
     #embarque = ui(locator.java.maxys_GEX001.Principal_local_de_embarque_text)
@@ -546,7 +604,7 @@ if __name__ == "__main__":
             df.loc[index, 'DataLog_Entrada'] = dataLog
             
             # Processa GEX001
-            NrNFE=_ProcessaGEX001(row['contrato_de_venda'],str(row['clifor_transportadora']),row["transgenia"])
+            NrNFE=_ProcessaGEX001(row['contrato_de_venda'],str(row['clifor_transportadora']),row["transgenia"], row["Lacre"])
 
             current_date = datetime.datetime.now()
             dataLog = current_date.strftime("%d/%m/%Y %H:%M:%S")
